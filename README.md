@@ -14,8 +14,8 @@
 
 ## 📢 News
 
-- [2026-03-XX] The anonymous review repository of **BRF-Net** is released.
-- [2026-03-XX] Core code, training pipeline, and evaluation scripts are organized for reproducibility.
+- [2026-03-14] The anonymous review repository of **BRF-Net** is released.
+- [2026-03-14] Core code, training pipeline, and evaluation scripts are organized for reproducibility.
 
 ---
 
