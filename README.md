@@ -93,7 +93,7 @@ The branch outputs are reweighted by competitive Softmax gating and then fused t
 ### 2. BRF Attention Block
 
 <p align="center">
-  <img src="assets/BRFA.png" width="70%">
+  <img src="assets/BRF Attention Block.png" width="70%">
 </p>
 
 <p align="center">
@@ -126,34 +126,76 @@ This design helps recover high-frequency information that may be weakened by att
 
 ## 📊 Results and Visualization
 
-### 1. Quantitative Comparison
+We present both quantitative and qualitative results of **BRF-Net** on representative medical image segmentation benchmarks, together with Grad-CAM visualizations for interpretability analysis.
+
+### 1. Quantitative Results on Binary Segmentation Benchmarks
 
 <p align="center">
-  <img src="assets/quantitative_results.png" width="94%">
+  <img src="assets/quantitative_binary.png" width="94%">
 </p>
 
 <p align="center">
-  <em>Quantitative comparison of BRF-Net with representative CNN, Transformer, and hybrid methods.</em>
+  <em>Quantitative comparison of BRF-Net against representative CNN-based, Transformer-based, and hybrid segmentation methods on six binary medical image segmentation datasets.</em>
 </p>
 
-### 2. Qualitative Comparison
+### 2. Quantitative Results on Synapse
 
 <p align="center">
-  <img src="assets/qualitative_results.png" width="94%">
+  <img src="assets/quantitative_synapse.png" width="94%">
 </p>
 
 <p align="center">
-  <em>Qualitative comparison on representative datasets. Error regions can be highlighted for clearer visual analysis.</em>
+  <em>Quantitative comparison on the Synapse multi-organ CT benchmark, showing organ-wise and average segmentation performance.</em>
 </p>
 
-### 3. Grad-CAM Visualization
+### 3. Quantitative Results on ACDC
+
+<p align="center">
+  <img src="assets/quantitative_acdc.png" width="94%">
+</p>
+
+<p align="center">
+  <em>Quantitative comparison on the ACDC cardiac MRI benchmark, including Dice performance on RV, MYO, LV, and the overall average.</em>
+</p>
+
+### 4. Qualitative Comparison on Binary Segmentation Benchmarks
+
+<p align="center">
+  <img src="assets/binary.png" width="94%">
+</p>
+
+<p align="center">
+  <em>Qualitative comparison on representative binary segmentation datasets. BRF-Net produces cleaner masks, fewer false positives, and more accurate boundary delineation under challenging conditions.</em>
+</p>
+
+### 5. Qualitative Comparison on Synapse
+
+<p align="center">
+  <img src="assets/Synapse.png" width="94%">
+</p>
+
+<p align="center">
+  <em>Qualitative results on the Synapse dataset. BRF-Net yields more complete organ regions and reduces inter-organ leakage in complex abdominal scenes.</em>
+</p>
+
+### 6. Qualitative Comparison on ACDC
+
+<p align="center">
+  <img src="assets/ACDC.png" width="94%">
+</p>
+
+<p align="center">
+  <em>Qualitative results on the ACDC dataset. BRF-Net provides more complete ventricular regions and cleaner myocardial contours.</em>
+</p>
+
+### 7. Grad-CAM Visualization
 
 <p align="center">
   <img src="assets/GradCAM.png" width="90%">
 </p>
 
 <p align="center">
-  <em>Grad-CAM visualizations of different methods on representative datasets.</em>
+  <em>Grad-CAM visualizations of different methods on representative datasets. BRF-Net exhibits more compact, target-aligned, and semantically focused activation patterns.</em>
 </p>
 
 ---
@@ -211,4 +253,6 @@ Project_Root/
 ## 🙏 Ackonwledge
 *We gratefully acknowledge [Zongjian Yang](https://github.com/Saury997) for his valuable guidance and support.*
 
-This repo is based in part on the works of A, B and C for their open-source code. We thank the authors for their valuable contributions, which inspired and guided our implementation.
+## 🙏 Acknowledgements
+
+This project benefits from several inspiring open-source repositories, including **H2Former**, **CFFormer**, **DFFN**, and **S3H-Net**. We are grateful to the original authors for sharing their code with the community. Their excellent work offered important reference and inspiration for the implementation of **BRF-Net**.
