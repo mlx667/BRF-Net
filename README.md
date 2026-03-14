@@ -3,14 +3,13 @@
 > **Paper Title**  
 > **BRF-Net: a Hybrid CNN-Transformer with Bidirectional Refinement and Spatial-Channel Fusion Attention for Medical Image Segmentation**
 
-> **Status:** 🟢 Under Anonymous Review
+> **Status:** 🟢 Under Review
 
 <p align="center">
   <img alt="Python" src="https://img.shields.io/badge/Python-3.10+-blue.svg">
   <img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg">
   <img alt="Lightning" src="https://img.shields.io/badge/PyTorch%20Lightning-2.1+-792ee5.svg">
   <img alt="Task" src="https://img.shields.io/badge/Task-Medical%20Image%20Segmentation-green.svg">
-  <img alt="Status" src="https://img.shields.io/badge/Review-Double--Blind-lightgrey.svg">
 </p>
 
 ---
@@ -207,3 +206,11 @@ Project_Root/
 ├── train.py
 ├── test.py
 └── README.md
+```
+
+---
+
+## 🙏 Ackonwledge
+*We gratefully acknowledge [Zongjian Yang](https://github.com/Saury997) for his valuable guidance and support.*
+
+This repo is based in part on the works of A, B and C for their open-source code. We thank the authors for their valuable contributions, which inspired and guided our implementation.
