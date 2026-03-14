@@ -1,0 +1,98 @@
+experiment_name: "Outputs"
+seed: 3407
+
+data:
+  task: "binary"         # "binary" | "multiclass"
+  num_classes: 1
+  activate_dataset: "xxxx"
+  datasets:
+     - name: "CVC-ClinicDB"
+       root: "/root/Medical Image Segmentation/data_source/CVC-ClinicDB"
+       split_json: null
+     - name: "ETIS-LaribPolypDB"
+       root: "/root/Medical Image Segmentation/data_source/ETIS-LaribPolypDB"
+       split_json: null
+     - name: "USG"
+       root: "/root/Medical Image Segmentation/data_source/USG"
+       split_json: null
+     - name: "ISIC2017"
+       root: "/root/Medical Image Segmentation/data_source/ISIC2017"
+       split_json: null
+     - name: "ISIC2018"
+       root: "/root/Medical Image Segmentation/data_source/ISIC2018"
+       split_json: null
+     - name: "Synapse"
+       root: "/root/Medical Image Segmentation/data_source/Synapse-rgb"
+       split_json: "./configs/Synapse_split.json"
+     - name: "ACDC"
+       root: "/root/Medical Image Segmentation/data_source/ACDC"
+       split_json: "./configs/ACDC_split.json"
+     - name: "DSB18"
+       root: "/root/Medical Image Segmentation/data_source/DSB18"
+       split_json: null
+
+  image_dirname: "images"
+  mask_dirname: "masks"
+
+
+  input_size: [256, 256]
+  image_channels: 3
+  mask_threshold: 0.5
+
+  augment:
+    hflip: true
+    vflip: true
+    rot90: true
+
+  batch_size: 30
+  num_workers: 4
+  pin_memory: true
+
+  split:
+    train: 0.7
+    val: 0.1
+    test: 0.2
+
+model:
+  active_model: 0
+  models:
+    - name: "unet_small"
+      kwargs: {in_channels: 3, out_channels: 1, base_channels: 32}
+    - name: "res34_swin_ms"
+      kwargs:
+          image_size: 256
+          in_channels: 3
+          out_channels: 1
+
+
+optim:
+  lr: 0.0003
+  weight_decay: 0.0001
+  scheduler: "poly"
+  min_lr: 1e-6
+
+loss:
+  lambda_dice: 1.0
+  lambda_ce: 1.0
+
+metrics:
+  threshold: 0.5
+
+trainer:
+  accelerator: "gpu"
+  devices: "auto"
+  precision: "32-true"
+  max_epochs: 250
+  log_every_n_steps: 20
+  enable_checkpointing: true
+  deterministic: false
+  check_val_every_n_epoch: 1
+  early_stopping:
+    monitor: "val/Dice"
+    patience: 50
+    mode: "max"
+    min_delta: 1e-4
+
+logging:
+  save_dir: "runs"
+  topk: 4
