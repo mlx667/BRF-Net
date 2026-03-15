@@ -161,7 +161,7 @@ We present both quantitative and qualitative results of **BRF-Net** on represent
 ### 4. Qualitative Comparison on Binary Segmentation Benchmarks
 
 <p align="center">
-  <img src="assets/binary.png" width="94%">
+  <img src="assets/Binary.png" width="94%">
 </p>
 
 <p align="center">
@@ -254,5 +254,4 @@ Project_Root/
 *We gratefully acknowledge [Zongjian Yang](https://github.com/Saury997) for his valuable guidance and support.*
 
 ## 🙏 Acknowledgements
-
-This project benefits from several inspiring open-source repositories, including **H2Former**, **CFFormer**, **DFFN**, and **S3H-Net**. We are grateful to the original authors for sharing their code with the community. Their excellent work offered important reference and inspiration for the implementation of **BRF-Net**.
+This project benefits from several inspiring open-source repositories, including **H2Former**, **CFFormer**, **DFFN**, and **[S3H-Net](https://github.com/Saury997/S3H-Net)**. We are grateful to the original authors for sharing their code with the community. Their excellent work offered important reference and inspiration for the implementation of **BRF-Net**.
