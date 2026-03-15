@@ -239,7 +239,6 @@ Project_Root/
 │   ├── DSB2018/
 │   ├── Synapse/
 │   └── ACDC/
-├── outputs/                   # saved predictions
 ├── runs/                      # logs / checkpoints
 ├── src/                       # source code
 ├── requirements.txt
