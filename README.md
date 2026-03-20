@@ -8,20 +8,26 @@
   <img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg">
   <img alt="Lightning" src="https://img.shields.io/badge/PyTorch%20Lightning-2.1+-792ee5.svg">
   <img alt="Task" src="https://img.shields.io/badge/Task-Medical%20Image%20Segmentation-green.svg">
+  <a href="https://doi.org/10.5281/zenodo.19129179">
+    <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.19129179.svg" alt="DOI">
+  </a>
 </p>
 
 ---
 
 ## 📢 News
 
-- [2026-03-14] The anonymous review repository of **BRF-Net** is released.
+- [2026-03-20] The BRF-Net repository has been archived in Zenodo with DOI: **10.5281/zenodo.19129179**.
+- [2026-03-14] The public repository of **BRF-Net** is released.
 - [2026-03-14] Core code, training pipeline, and evaluation scripts are organized for reproducibility.
 
 ---
 
 ## 📖 Overview
 
-This repository contains the anonymous implementation of **BRF-Net**, a hybrid CNN-Transformer framework for medical image segmentation.
+This repository contains the implementation of **BRF-Net**, a hybrid CNN-Transformer framework for medical image segmentation.
+
+This repository is directly related to our manuscript submitted to **The Visual Computer**.
 
 Medical image segmentation remains challenging due to three common issues:  
 (1) large anatomical and lesion-scale variation,  
@@ -61,7 +67,7 @@ BRF-Net is extensively evaluated on multiple public benchmarks spanning **endosc
 </p>
 
 <p align="center">
-  <em>Overall architecture of BRF-Net. Replace <code>assets/BRF-Net.png</code> with your actual framework figure.</em>
+  <em>Overall architecture of BRF-Net.</em>
 </p>
 
 BRF-Net follows a hierarchical hybrid encoder-decoder design.
@@ -88,8 +94,6 @@ BRF-Net follows a hierarchical hybrid encoder-decoder design.
 AGMS employs four parallel depthwise-separable branches with different kernel sizes to capture multi-scale responses.  
 The branch outputs are reweighted by competitive Softmax gating and then fused to produce scale-adaptive shallow representations.
 
----
-
 ### 2. BRF Attention Block
 
 <p align="center">
@@ -106,8 +110,6 @@ The BRF Attention Block splits attention heads into:
 - a **channel stream** for global semantic reasoning via **CSA**.
 
 The two streams are refined through reciprocal interaction and then fused by lightweight gating and convolutional operations.
-
----
 
 ### 3. PF-FFN
 
@@ -219,6 +221,11 @@ We evaluate BRF-Net on **eight public datasets** covering multiple medical imagi
 > Synapse and ACDC follow predefined Train/Test protocols.  
 > The remaining datasets use fixed train/validation/test splits under the same experimental setting.
 
+> [!IMPORTANT]
+> The experiments are conducted on publicly available datasets.  
+> Due to dataset licensing and distribution policies, raw dataset files are not redistributed in this repository.  
+> Please prepare the datasets according to the repository instructions and the corresponding official dataset sources.
+
 ---
 
 ## 📁 Recommended Directory Structure
@@ -249,9 +256,95 @@ Project_Root/
 
 ---
 
-## 🙏 Acknowledgements
-*We gratefully acknowledge [Zongjian Yang](https://github.com/Saury997) for his valuable guidance and support.*
+## ⚙️ Installation
 
-This repository contains the implementation corresponding to our manuscript submitted to The Visual Computer.
+Clone the repository and install the required dependencies:
+
+```bash
+git clone https://github.com/mlx667/BRF-Net.git
+cd BRF-Net
+pip install -r requirements.txt
+```
+
+We recommend using:
+
+- **Python 3.10+**
+- **PyTorch 2.0+**
+- **PyTorch Lightning 2.1+**
+
+---
+
+## 🚀 Quick Start
+
+### Training
+
+```bash
+python train.py
+```
+
+### Testing
+
+```bash
+python test.py
+```
+
+Please modify the configuration files and dataset paths according to your local environment before training or testing.
+
+---
+
+## 🔖 Code Availability
+
+The source code associated with this work is publicly available on GitHub and archived in Zenodo with the following DOI:
+
+**DOI:** `10.5281/zenodo.19129179`
+
+**GitHub Repository:**  
+https://github.com/mlx667/BRF-Net
+
+**Zenodo Record:**  
+https://doi.org/10.5281/zenodo.19129179
+
+This repository is directly related to our manuscript submitted to **The Visual Computer**.
+
+---
+
+## 📚 Citation
+
+If you find this repository useful in your research, please cite the Zenodo record of this code release and the related manuscript.
+
+### Citation for the code release
+
+```bibtex
+@software{brfnet_zenodo_2026,
+  author       = {Lanxiang Ma and Zongjian Yang and Jinghua Zhu and Jiquan Ma},
+  title        = {BRF-Net for Medical Image Segmentation},
+  year         = {2026},
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.19129179},
+  url          = {https://doi.org/10.5281/zenodo.19129179}
+}
+```
+
+### Citation for the manuscript
+
+```bibtex
+@article{brfnet_manuscript_2026,
+  title   = {BRF-Net: a Hybrid CNN-Transformer with Bidirectional Refinement and Spatial-Channel Fusion Attention for Medical Image Segmentation},
+  author  = {Lanxiang Ma and Zongjian Yang and Jinghua Zhu and Jiquan Ma},
+  journal = {The Visual Computer},
+  year    = {2026},
+  note    = {Submitted}
+}
+```
+
+> The manuscript citation information will be updated after formal publication.
+
+---
+
+## 🙏 Acknowledgements
+
+We gratefully acknowledge [Zongjian Yang](https://github.com/Saury997) for his valuable guidance and support.
+
+This repository contains the implementation corresponding to our manuscript submitted to **The Visual Computer**.
 
 This project benefits from several inspiring open-source repositories, including **[H2Former](https://github.com/NKUhealong/H2Former.git)**, **[CFFormer](https://github.com/JiaxuanFelix/CFFormer.git)**, **[DFFN](https://github.com/kkkls/FFTformer.git)**, and **[S3H-Net](https://github.com/Saury997/S3H-Net)**. We are grateful to the original authors for sharing their code with the community. Their excellent work offered important reference and inspiration for the implementation of **BRF-Net**.
