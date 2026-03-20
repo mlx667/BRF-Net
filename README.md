@@ -325,22 +325,6 @@ If you find this repository useful in your research, please cite the Zenodo reco
 }
 ```
 
-### Citation for the manuscript
-
-```bibtex
-@article{brfnet_manuscript_2026,
-  title   = {BRF-Net: a Hybrid CNN-Transformer with Bidirectional Refinement and Spatial-Channel Fusion Attention for Medical Image Segmentation},
-  author  = {Lanxiang Ma and Zongjian Yang and Jinghua Zhu and Jiquan Ma},
-  journal = {The Visual Computer},
-  year    = {2026},
-  note    = {Submitted}
-}
-```
-
-> The manuscript citation information will be updated after formal publication.
-
----
-
 ## 🙏 Acknowledgements
 
 We gratefully acknowledge [Zongjian Yang](https://github.com/Saury997) for his valuable guidance and support.
